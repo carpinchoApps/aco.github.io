@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Declaracion Jurada obligatoria de parentesco</title>
+<style>
+body{
+  margin: 0;
+  padding: 0;
+}
+/*@page Legal { size: 8.5in 14in; }*/
+@page{
+     size: Legal portrait;  /* Oficio Vertical */
+     margin: 2cm 2cm 2cm 2cm;  /* Margenes */
+
+    }
+p, b,table, td, tr, li{
+  font-family:Arial;font-size:12pt; margin: 0;
+  padding: 0;
+}
+p{
+  line-height:150%; /* Interlineado */
+  text-indent: 40px; /* Sangria en primera linea */
+  }
+.cua{
+  text-indent: 0;
+}
+
+ol{
+  margin-left: 25px;
+  margin-top: 0;
+}
+li{
+  text-align: justify;
+}
+td{
+  padding: 10px;
+}
+@media all {
+   div.saltopagina{
+      display: none;
+   }
+}
+
+@media print{
+   div.saltopagina{
+      display:block;
+      page-break-before:always;
+   }
+}
+</style>
+</head>
+<body>
+<div class="bloque"></div>
+<script language='javascript' src="DecJudUni.js"></script>
+</body>
+</html>

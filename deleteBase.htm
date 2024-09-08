@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Delete base</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var dbName='CCCYM#INAES'
+function databaseExists(dbname) {
+	var req = indexedDB.open(dbname);
+	var existed = true;
+	req.onsuccess = function () {
+	req.result.close();
+	indexedDB.deleteDatabase(dbname)
+	console.log('Se elimino la base')
+	document.body.textContent='Se eliminó la base'
+		//callback(existed, dbname, newChain);
+	}
+	req.onupgradeneeded = function () {
+		existed = false;
+	}
+}
+
+databaseExists(dbName)
+
+
+	</script>
+</body>
+</html>

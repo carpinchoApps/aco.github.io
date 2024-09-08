@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>ACTA CONSTITUTIVA</title>
+<style  type="text/css">
+body{
+  margin: 0;
+  padding: 0;
+  border-left:solid black 1px;
+  border-right:solid black 1px;
+}
+
+@page Legal { size: 8.5in 14in; }
+
+@page :right {
+     size: Legal portrait;  /* Oficio Vertical */
+     margin: 5cm 1.5cm 5cm 5cm;  /* Margenes */
+
+    }
+
+@page:left{
+     size: legal portrait;  /* Oficio Vertical */
+     margin: 5cm 5cm 5cm 1.5cm;  /* Margenes */
+    }
+
+p, b,table, td, tr{
+  font-family:Arial;font-size:12pt; margin: 0;
+  padding: 0;
+
+}
+
+p{
+  line-height:150%; /* Interlineado */
+  text-indent: 0; /* Sangria en primera linea */
+  text-align: justify;
+  text-decoration: underline;
+  }
+
+.titulo{
+  font-weight: bold;
+}
+
+@media all {
+   div.saltopagina{
+      display: none;
+   }
+}
+
+@media print{
+   div.saltopagina{
+      display:block;
+      page-break-before:always;
+   }
+}
+
+#EspacioFirmas{
+ margin: 0;
+ padding:0;
+ height: 8cm;
+}
+
+</style>
+</head>
+<body>
+<div class="bloque">bloque 1</div>
+<!-- 
+<div class="saltopagina"></div>
+<div class="bloque">bloque 2</div>
+<div class="saltopagina"></div> 
+<div class="bloque">bloque 3</div>
+-->
+<script type="text/javascript" src="ActaConstitutiva.js"></script>
+<script type="text/javascript" src="ntsa.js"></script>
+
+</body>
+</html>

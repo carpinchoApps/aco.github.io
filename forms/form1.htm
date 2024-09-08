@@ -1,0 +1,175 @@
+<!--
+********************************************************
+* Generador de Actas Constitutivas de Cooperativas *****
+* FORMULARIO DE COOPERATIVAS ***************************
+* 09/07/2020 by Carpincho® Web ©             ***********
+* mjazz@outlook.es        ******************************
+********************************************************
+-->
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="utf-8">
+<head>
+	<title>Formulario de cooperativas</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+	<div class="gridHead">
+		<div>Actas Constitutivas Online (ACO) V.4.0.3</div>
+		<div><a href="form2.htm"><img src="group_24.gif" border="0" align="absmiddle" alt="Cargar Asociados" hspace="3" /> Cargar Asociados </a></div>
+		<div>...</div>
+	</div>
+<div class="columnaIzq bgcCoops"> 
+	<div id="coops"></div>
+</div>
+
+<div class="columnaDer">
+	<form id="form">
+		<table border="0" width="100%" cellspacing="0">
+        	<tr>
+    			<td colspan="6"  class="fondoenctablas">Datos de la Cooperativa</td>
+        	</tr>
+			<tr>
+				<th class="thenc" >Fecha y hora Asamblea:</th>
+				<td colspan="5" class="campos" > <label for="fechaAsamblea">Elegir Fecha: </label>
+					<input type="date" name="fechaAsamblea" id="fechaAsamblea" value="" required /> |
+					&nbsp; |&nbsp; Elegir hora: <input type="number" name="hora" required value="" min="2" max="22" class="minNum" />
+				</td>
+			</tr>
+			<tr>
+				<th class="thenc">Denominación:</th>
+				<td class="campos">
+					<input type="text" name="denominacion" size="60" maxlength="80" placeholder="Denominación de la Cooperativa" required="required" value="" />
+					<br>
+					Escribir sólo el nombre de fantasía (sin "COOP. DE TRABAJO" ni "LTDA".).
+				</td>
+				<th class="thenc">&nbsp;Capital suscripto <br />por cada asociado:&nbsp;</th>
+				<td class="campos" >
+					En Coops. de trabajo Salario minimo vital y movil<br>
+				&nbsp;$&nbsp;<input type="number" name="cap_sus" value="262500" class="minNum" required />
+				</td>
+				<th class="thenc">Tipo y Resolución <br />de cooperativa:</th>
+				<td class="campos">
+				<select size="1" id="tipo_coop" name="tipo_coop" required >
+				<option value="" >Seleccionar...</option>
+				<option value="r255">Trabajo 255/88</option>
+				<option value="r750">Trabajo 750/94</option>
+				<option value="r1000">Trabajo 1000/21</option>
+				<option value="viv">Vivienda</option>
+				</select><hr>
+				<label for="especial">¿Especial?</label> <input type="checkbox" id="especial" name="especial" />
+			</td>
+			</tr>
+			<tr>
+				<th rowspan="4" class="thenc">Domicilio:</th>
+				<td   width="93%"  colspan="5" class="campos"> <label for="dom_calle">Calle:</label><input type="text" name="dom_calle" id="dom_calle"  maxlength="50" placeholder="ingresar nombre de calle" required  /> <label for="dom_num">Nro:</label>
+				 <input type="number" name="dom_num" id="dom_num" class="minNum" />
+				<label for="dom_piso">Piso:</label>
+				<input type="text" name="dom_piso" id="dom_piso" size="2" maxlength="15"/>
+				 <label for="dom_dto">Depto:</label>
+				<input type="text" name="dom_dto" id="dom_dto" size="2" maxlength="15" /> 
+				</td>
+			</tr>
+			<tr>
+				<td width="93%" colspan="5" class="campos">
+					<label for="dom_adic">Datos adicionales:</label><input type="text" name="dom_adic" id="dom_adic" size="17" maxlength="50" />
+					<font color="#808080">
+					« Ej.: Manzana, bloque, casa, parcela, etc.</font> 
+				</td>
+			</tr>
+			<tr>
+				<td width="93%" colspan="5" class="campos">
+					<label for="pciasarg">Provincia:</label> 
+					<select name="dom_pcia" size="1" id="dom_pcia" required >
+					<option selected value="-1">::::Seleccione una Provincia::::</option>
+					<option value="0">CIUDAD AUT. DE BUENOS AIRES</option>
+					<option value="1">BUENOS AIRES</option>
+					<option value="2">CATAMARCA</option>
+					<option value="3">CORDOBA</option>
+					<option value="4">CORRIENTES</option>
+					<option value="5">CHACO</option>
+					<option value="6">CHUBUT</option>
+					<option value="7">ENTRE RIOS</option>
+					<option value="8">FORMOSA</option>
+					<option value="9">JUJUY</option>
+					<option value="10">LA PAMPA</option>
+					<option value="11">LA RIOJA</option>
+					<option value="12">MENDOZA</option>
+					<option value="13">MISIONES</option>
+					<option value="14">NEUQUEN</option>
+					<option value="15">RIO NEGRO</option>
+					<option value="16">SALTA</option>
+					<option value="17">SAN JUAN</option>
+					<option value="18">SAN LUIS</option>
+					<option value="19">SANTA CRUZ</option>
+					<option value="20">SANTA FE</option>
+					<option value="21">SANTIAGO DEL ESTERO</option>
+					<option value="22">TIERRA DEL FUEGO</option>
+					<option value="23">TUCUMAN</option>
+					</select>
+					Partido / Departamento: <SELECT name="dom_pdodep" id="dom_pdodep" id="dom_pdodep"></SELECT>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5" class="campos">
+					<label for="dom_loca">Localidad:</label><SELECT name="dom_loca" id="dom_loca"></SELECT> 
+					<label for="chek_otra">Otra Localidad:</label>
+					<input type="checkbox" name="chek_otra" value="checkbox" id="chek_otra"  />
+					<input  style="visibility:hidden" id="dom_otra_loca" type="text" name="dom_otra_loca" size="30" alt="Ingrese su localidad" />
+					<br />
+					Código Postal:
+					<input style="width:15px" type="text" name="dom_preCP" size="1" disabled  />
+					<input type="number" name="dom_CP" size="4"  min="1000" max="9999" class="minNum" required  />
+					<input type="text" name="dom_posCP" size="1" maxlength="3"><font color="#808080">
+					« Ej.: C-1234-XXX (últimas 3 letras no obligatorias)
+					</font> 
+				</td>
+			</tr>
+			<tr>
+				<td colspan="6" class="fondoenctablas">Objeto social Art.5º del estatuto</td>
+			</tr>
+			<tr>
+				<th width="7%" class="thenc">&nbsp;</th>
+				<td width="93%" colspan="5" class="campos">
+				<center><p>Modelos:
+				<select id="CmbModObjSoc" name="CmbModObjSoc" required>
+				<option selected value="">::::Seleccione un modelo::::</option>
+				</select>
+				</p>
+				<div id="TextoObjetoSocial" contenteditable="true"></div>
+				</center>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="100%" align="center" colspan="6" class="fondoenctablas txtwhite" >Datos de Contacto del Representante y para la AFIP</td>
+			</tr>
+			<tr>
+				<th width="7%" rowspan="2" class="thenc">Contacto:</th>
+				<td width="93%" colspan="5" class="campos">
+					<p>El representante de la cooperativa durante el trámite de inscripción puede ser cualquier socio o una persona exterior a la cooperativa.</p>
+					<p>Apellido: <input type="text" name="ConApellido" id="ConApellido" size="32" maxlength="50" required  />&nbsp;Nombres: <input type="text" name="ConNombres" size="32" maxlength="50" ID="ConNombres" required  />&nbsp;DNI: <input type="number" name="ConNroDoc"  ID="ConNroDoc" class="telefono" max="99999999" min="1000000" required  /></p>
+					<span style="color: red; font-weight: bold;">ATENCIÓN! Los siguientes datos son necesarios para la obtención del CUIT ante la AFIP.</span><br>&nbsp;Código de área: <input type="text" name="ConTel_cod" id="ConTel_cod" class="minNum" maxlength="5" required  />
+					Teléfono fijo: <input type="number" name="ConTel_num" id="ConTel_num" class="telefono" required  /> Celular: <input type="number" name="ConTel_cel" id="ConTel_cel" class="telefono" required  /> - <input type="text" placeholder="empresa" list="empresa" name="empresa" />
+					<datalist id="empresa"><option value="Claro"><option value="Movistar"><option value="Nextel"><option value="Personal"><option value="Tuenti"></datalist> <br>
+					<label for="Email">E-mail:</label><input type="email" name="ConEmail" id="Email" size="40"   maxlength="100" placeholder="usuario@servidor.com" required  /> <br><span style="color: red">IMPORTANTE! El email se constituirá como el domicilio fiscal ante la AFIP.</span>
+				</td>
+			</tr>
+	  	</table>
+		<center> 
+			<div id="aler" name="aler" class="alert"></div>
+			<input type="reset" value="Restablecer" class="btn_saveForm" name="Restablecer" />
+	    	<button name="Guardar" class="btn_saveForm" data-action="add">Guardar Datos</button>
+	    </center>
+	    <input type="text" name="userOcult" hidden="hidden" />
+	</form>
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+<center> <img src="../carpincho.png" width="25" align="absmiddle" />Carpinch&Oslash; Web &reg; </center>
+
+</div>
+
+<script type="text/javascript" src="form1.js"></script>
+<script type="text/javascript" src="functions.js"></script>
+</body>
+</html>

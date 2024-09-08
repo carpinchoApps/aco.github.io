@@ -1,0 +1,253 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+.mooli-regular {
+  font-family: "Mooli", sans-serif;
+  font-weight: 400;//  600 para bold
+  font-style: normal;
+}
+/* CSS Document */
+body, table, *, all{font-family: "Mooli", sans-serif;}
+body{ margin:0 10px; }
+
+p{margin:5px}
+form{margin:0px}
+
+.gridHead{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  visibility: visible;
+ }
+ .gridHead div{
+  border-radius: 15px;
+  border: solid 1px #343849;
+  color: #343849;
+  padding: 2px;
+  margin: 2;
+  text-align: center;
+}
+.linksprin{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  visibility: visible;
+ }
+.linksprin div{
+  border: solid 1px #343849;
+  color: #343849;
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  border-top: none;
+}
+.linksprin div.he{
+  background-color: #343849;
+  color: #FFFFFF;
+  font-weight: bold;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  border: solid 1px #343849;
+  text-align: center;
+}
+.listoImp{
+  color: #343849;
+  font-weight: bold;
+  font-size: 15pt;
+  padding: 5px 0;
+  text-align: center;
+}
+.page{
+  cursor: pointer;
+}
+img.loguitocoop {vertical-align:middle}
+
+.fondoenctablas{
+  background-color:#343849; 
+  padding: 5px;
+  color: #FFFFFF;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 15px;
+}
+
+a{
+	color:black;
+	font-weight: bold;
+}
+a:hover{
+	color:#099;
+}
+#linksimpresion{
+  text-align: center;
+ }
+
+/*desde aqui nuevo julio/2020 */
+
+.fondoenfiltros{
+    background-color: white;
+    padding: 5px;
+    color: #3F3F3F;
+    font-size: 11pt;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid 1px #515050;
+    margin: 7px;
+}
+.fondoenfiltros span{
+	font-size: 9pt;
+    font-weight: normal;
+}
+/*Botones*/
+/*boton modificar*/
+.fondoenfiltros button.btn, div#aler button.btn{
+	text-decoration: none;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: bold;
+    font-size: 8pt;
+    font-style: italic;
+    cursor: pointer;
+	border-radius: 15px;
+}
+.fondoenfiltros button.btn:hover{opacity: 0.6;text-decoration: none;}
+.fondoenfiltros button.btn_update{
+    color: #006505;
+    background-color: #CDD7CA;
+    border: 1px solid #006505;
+  }
+
+   /*boton eliminar*/
+.fondoenfiltros button.btn_delete, div#aler button.btn_delete{
+    color: red;
+    background-color: #FFD0D0;
+    border: 1px solid red;
+  }
+
+ /*boton imprimir*/
+.fondoenfiltros button.btn_print{
+    color: black;
+    background-color: #E4E2E2;
+    border: 1px solid black;
+}
+
+.btn_saveForm{
+    text-decoration: none;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: helvetica;
+    font-weight: bold;
+    font-size: 12pt;
+    font-style: italic;
+    color: #212221;
+    background-color: #C1C2C1;
+    border-radius: 15px;
+    border: 1px solid #212221;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+.btn_saveForm:hover{opacity: 0.6;text-decoration: none;}
+
+
+
+#TextoObjetoSocial{
+  text-align: justify;
+  padding: 0 0 5px 0;
+  margin:0;
+  width: 60%;
+  font-size:  1.2em;
+  font-weight: normal;
+}
+
+.columnaIzq{
+	padding: 0;
+	margin: 0;
+	display: block;
+	width: 22%;
+	float: left;
+	border-radius: 15px;
+
+}
+.bgcCoops{background-color: #343849 ;}
+
+.columnaDer{
+	margin-left: 0.5%;
+	display: inline-block;
+	width: 75%;
+	float: left;
+}
+
+.columnaDer .centerh, .centerh{
+  background-color: #343849;
+  border-radius: 15px;
+  padding: 8px;
+  color: #FFFFFF;
+}
+
+.columnaDer center.blanco{
+  background-color: #FFFFFF;
+}
+
+th.thenc{
+	border-bottom:1px solid #999;
+	background-color: #EEEEEE;
+	text-align: right;
+	font-size: .9em;
+	padding: 5px;
+}
+
+td.campos{
+	border-bottom:1px solid #999;
+	padding-left: 10px;
+	background-color: white;
+	font-size: .8em;
+}
+select{
+	font-size: 1em;	
+}
+
+.alert{
+	color: #AD0303;
+	font-family: Helvetica;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 14pt;
+	padding-top: 15px;
+};
+
+div#aler button{
+	margin-left: 12px;
+	padding-left: 15px;
+}
+
+.minNum { width:65px; font-size: 1em;  };
+
+.telefono{ width: 150px;font-size: 1em; };
+
+.asocs{
+  border-radius: 15px; 
+  border: solid 2px #343849;
+  margin-top: 12px;
+}
+
+.asocs fieldset, .asocs legend{
+  border: solid 2px #343849;
+  border-radius: 12px;
+  padding: 2px;
+  margin: 2px 2px;
+}
+
+#miniformcuil{
+  visibility: hidden;
+}
+
+.names{
+  width: 280px;
+}
+.nuevoAsocs{
+  visibility: hidden;
+}

@@ -1,0 +1,237 @@
+<!--
+********************************************************
+* Generador de Actas Constitutivas de Cooperativas *****
+* FORMULARIO DE ASOCIADOS    ***************************
+* 09/07/2020 by Carpincho® Web ©             ***********
+* mjazz@outlook.es        ******************************
+********************************************************
+-->
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<head>
+	<title>Carga de Asociados</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+	<div class="gridHead">
+		<div>Actas Constitutivas Online (ACO) V.4.0.3</div>
+		<div><a href="form1.htm"><img src="coop_24.gif" border="0" align="absmiddle" hspace="3" /> Cargar Cooperativas </a></div>
+		<div>...</div>
+	</div>
+	<center class="centerh"><select name='cualcoop' id="cualcoop">
+				<option value="0" selected>::Elija una Cooperativa::</option></select></center>
+	<div class="nuevoAsocs">
+	<div class="columnaIzq"><center class="centerh">Asociados y Cargos.</center>
+		<div id="asocs" class="asocs">
+			<fieldset><legend>Consejo de Administracion</legend>
+                <!-- aqui comienza el array de consejo de administracion -->
+                <div id="display_consejo_adm"></div>
+                <!-- aqui finaliza el array de consejo de administracion -->
+            </fieldset>
+            <fieldset><legend>Consejo de Fiscalizacion</legend>
+            	<div id="display_consejo_sind"></div>
+            </fieldset>
+            <fieldset><legend>Asociados</legend>
+            	<div id="display_socios"></div>
+            </fieldset>
+		</div>
+	</div>
+	<div class="columnaDer">
+		
+		<form id="form">
+			<table border="0" width="100%" cellspacing="0">
+				<tr >
+					<td colspan="2" >
+						<input type="hidden" id="quesocio" NAME="quesocio"> 
+						<input type="hidden" id="quecoop" NAME="quecoop">
+						<input type="hidden" id="queEdit" NAME="queEdit" value="">
+					</td>
+				</tr>
+				<tr>
+					<th class="thenc" width="15%">Cargo:</th>
+					<td class="campos">
+						<select name="cargo" id="cargo">
+							
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th class="thenc">Tipo y Nº Doc.&nbsp;</th>
+					<td class="campos">
+						<font size="2" color="#808080">
+							« Seleccione Tipo de documento de la lista e ingréselo.
+						</font><br>
+						<select name="tipo_doc" ID="tipo_doc">
+							<option selected value="DNI">DNI</option>
+							<option value="LE">L.E.</option>
+							<option value="LC">L.C.</option>
+						</select>
+						<input type="number" min="1000000" max="99999999" id="nro_doc" name="nro_doc" required/>
+						<span id="spanParaEdicion"></span>
+					</td>
+				</tr>
+				<tr>
+					<th class="thenc">Apellido:</th>
+					<td class="campos">
+						<input type="text" name="apellidos" id="apellidos" placeholder="Ingrese sus apellidos..." required class="names" />
+					</td>
+				</tr>
+				<tr>
+					<th class="thenc">Nombres:</th>
+					<td class="campos">
+						<input type="text" name="nombres" id="nombres" placeholder="...y sus nombres completos." required class="names" />
+					</td>
+				</tr>
+				<tr>
+					<th class="thenc">Género:</th>
+					<td class="campos">
+						<select name="sexo" id="sexo">
+							<option value="M" selected>Masculino</option>
+							<option value="F">Femenino</option>
+							<option value="X">Otro</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th class="thenc">Estado Civil:</th>
+					<td class="campos">
+						<select name="estado_civil" id="estado_civil">
+							<option value="1" selected>Soltero/a</option>
+							<option value="2">Unión conyugal de hecho</option>
+							<option value="3">Casado/a</option>
+							<option value="4">Separado/a de hecho</option>
+							<option value="5">Divorciado/a</option>
+							<option value="6">Viudo/a</option>
+						</select>
+					</td>
+				</tr>
+	            <tr>
+					<th rowspan="7" class="thenc">Otros datos solicitados por la <a href='https://vpo3.inaes.gob.ar/files/Resoluciones/INAES/RESFC-2021/2397/RESFC-2021-2397-APN-DI-INAES.pdf' target="_blank">Res.2397/21</a>:</th>
+					<td class="campos"><label for="celular">Celular:</label>
+						(<input type="number" id="area_cod" name="area_cod" class="minNum" />)-
+	                        <input type="number" id="num_tel" name="num_tel" required />
+						<font size="2" color="#808080">...ingrese un número de celular donde poder contactar a la persona.</font>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="email">Correo electrónico:</label><input type="text" name="email" id="email" size="35" maxlength="80" /> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="profesion">Profesión:</label><input type="text" name="profesion" id="profesion" size="20" maxlength="50" />						 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="nacionalidad">Nacionalidad:</label><input type="text" name="nacionalidad" id="nacionalidad" size="17" maxlength="50" /> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="residencia">País de residencia:</label><input type="text" name="residencia" id="residencia" size="17" maxlength="50" /> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="fecha_nac">Fecha de nacimiento:</label> <input type="date" name="fecha_nac" id="fecha_nac" value="" /> 
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="cuil">CUIL/CUIT:</label><input type="number" min="20" max="27" name="a_cuil" id="a_cuil" list="precuiles" />
+						<datalist id="precuiles"><option value="20"><option value="23"><option value="27"></datalist> /
+						<input type="text" name="CUIL" maxlength="8" id="CUIL" disabled /> /
+						<input type="number" min="0" max="9" name="p_cuil" id="p_cuil" />
+					</td>
+				</tr>
+
+				<tr>
+					<th rowspan="4" class="thenc">Domicilio:</th>
+					<td   width="93%"  colspan="5" class="campos"> <label for="dom_calle">Calle:</label><input type="text" name="dom_calle" id="dom_calle"  maxlength="50" placeholder="ingresar nombre de calle" required  /> <label for="dom_num">Nro:</label>
+					 <input type="number" name="dom_num" id="dom_num" class="minNum" />
+					<label for="dom_piso">Piso:</label>
+					<input type="text" name="dom_piso" id="dom_piso" size="2" maxlength="15"/>
+					 <label for="dom_dto">Depto:</label>
+					<input type="text" name="dom_dto" id="dom_dto" size="2" maxlength="15" /> 
+					</td>
+				</tr>
+				<tr>
+					<td width="93%" colspan="5" class="campos">
+						<label for="dom_adic">Datos adicionales:</label><input type="text" name="dom_adic" id="dom_adic" size="17" maxlength="50" />
+						<font color="#808080">
+						« Ej.: Manzana, bloque, casa, parcela, etc.</font> 
+					</td>
+				</tr>
+				<tr>
+					<td width="93%" colspan="5" class="campos">
+						<label for="pciasarg">Provincia:</label> 
+						<select name="dom_pcia" size="1" id="dom_pcia" required >
+						<option selected value="-1">::::Seleccione una Provincia::::</option>
+						<option value="0">CIUDAD AUT. DE BUENOS AIRES</option>
+						<option value="1">BUENOS AIRES</option>
+						<option value="2">CATAMARCA</option>
+						<option value="3">CORDOBA</option>
+						<option value="4">CORRIENTES</option>
+						<option value="5">CHACO</option>
+						<option value="6">CHUBUT</option>
+						<option value="7">ENTRE RIOS</option>
+						<option value="8">FORMOSA</option>
+						<option value="9">JUJUY</option>
+						<option value="10">LA PAMPA</option>
+						<option value="11">LA RIOJA</option>
+						<option value="12">MENDOZA</option>
+						<option value="13">MISIONES</option>
+						<option value="14">NEUQUEN</option>
+						<option value="15">RIO NEGRO</option>
+						<option value="16">SALTA</option>
+						<option value="17">SAN JUAN</option>
+						<option value="18">SAN LUIS</option>
+						<option value="19">SANTA CRUZ</option>
+						<option value="20">SANTA FE</option>
+						<option value="21">SANTIAGO DEL ESTERO</option>
+						<option value="22">TIERRA DEL FUEGO</option>
+						<option value="23">TUCUMAN</option>
+						</select>
+						Partido / Departamento: <SELECT name="dom_pdodep" id="dom_pdodep" id="dom_pdodep"></SELECT>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" class="campos">
+						<label for="dom_loca">Localidad:</label><SELECT name="dom_loca" id="dom_loca"></SELECT> 
+						<label for="chek_otra">Otra Localidad:</label>
+						<input type="checkbox" name="chek_otra" value="checkbox" id="chek_otra"  />
+						<input  style="visibility:hidden" id="dom_otra_loca" type="text" name="dom_otra_loca" size="30" alt="Ingrese su localidad" />
+						<br />
+						Código Postal:
+						<input style="width:15px" type="text" name="dom_preCP" size="1" disabled  />
+						<input type="number" name="dom_CP" min="1000" max="9999" class="minNum" required  />
+						<input type="text" name="dom_posCP" size="1" maxlength="3"><font color="#808080">
+						« Ej.: C-1234-XXX (últimas 3 letras no obligatorias)
+						</font> 
+					</td>
+				</tr>
+
+			</table>
+			<center class="blanco"> 
+				<div id="aler" name="aler" class="alert"></div>
+				<input type="reset" value="Restablecer" class="btn_saveForm" name="Restablecer" />
+		    	<button name="Guardar" class="btn_saveForm" data-action="add" data-id_coop="" data-key="" >Guardar Datos</button>
+	    	</center>
+	    	<input type="text" name="userOcult" hidden="hidden" />
+		</form>
+		<div id="aler2" name="aler2" class="listoImp"></div>
+		<div  id="linksimpresion" class="linksprin"></div>
+	</div>
+	
+	</div>
+	<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+	<center> Carpinch&Oslash; Web &reg; <img src="../carpincho.png" width="25" align="absmiddle" /></center>
+
+	<script type="text/javascript" src="form2.js"></script>
+	<script type="text/javascript" src="functions.js"></script>
+</body>
+</html>
