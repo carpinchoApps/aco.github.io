@@ -21,8 +21,10 @@ if(idb && a){
 				// -----------------------------------------
 				//enviar aqui los datos json a un script php
 				// -----------------------------------------
-				fetch(ipPort, {method: 'POST', body: JSON.stringify(Coop), headers: {"Content-type": "application/json"}})
+				/*
+    				fetch(ipPort, {method: 'POST', body: JSON.stringify(Coop), headers: {"Content-type": "application/json"}})
 				.then(res => res.json()).then(data => console.log(JSON.stringify(data))).catch(err => console.log(err))
+				*/
 			    //fin envios fetch
 				
 				if(Coop.Dom_pcia_cod==0) {
